@@ -1,0 +1,21 @@
+function prompt_cubox_setup {
+    if [[ $UID -eq 0 ]]; then
+        eval user="%F{red}%B%n%f%b"
+        local userprompt="%b%F{red}λ %f%b"
+    else
+        eval user="%F{green}%B%n%f%b"
+        local userprompt="%b%F{blue}λ %f%b"
+    fi
+    if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+        eval host="%F{yellow}%B%M%f%b"
+    else
+        eval host="%F{red}%B%M%f%b"
+    fi
+    local user_host="${user}%F{blue}@${host}"
+    local currentdir='%F{166}%B%~%b%f'
+
+    zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+    PROMPT="%F{blue}<${user_host}%F{blue}>-<${currentdir}%F{blue}> %F{blue}$userprompt%f%b"
+}
+
+prompt_cubox_setup "$@"
