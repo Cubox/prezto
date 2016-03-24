@@ -17,7 +17,8 @@ setopt EXTENDED_GLOB
 setopt INTERACTIVECOMMENTS
 unsetopt CLOBBER
 unsetopt CORRECT
-unalias rm
+unalias rm 2>/dev/null
+unalias scp 2>/dev/null
 
 if [[ -z "$HOSTNAME" ]]; then
     HOSTNAME=$(hostname)
@@ -30,8 +31,8 @@ if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
     export GOOS=darwin
     export GOARCH=amd64
     export PATH=${PATH}:/usr/local/opt/go/bin:${GOPATH}/bin
-elif [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Alduin" ]]; then
-    export GOOS=linux
+elif [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Nidhoggur" ]]; then
+    export GOOS=freebsd
     export GOARCH=amd64
     export GOPATH=~/prog/Go
     export PATH=${PATH}:${GOPATH}/bin

@@ -32,14 +32,14 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'history-substring-search' \
   'syntax-highlighting' \
+  'history-substring-search' \
+  'autosuggestions' \
   'prompt' \
   'archive' \
   'git' \
   'homebrew' \
   'osx' \
-  'pacman' \
   'tmux' \
   'rsync'
 
