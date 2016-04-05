@@ -49,6 +49,11 @@ fi
 
 # Various exports for me
 
+if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "CuboxVM" ]]; then
+	export PATH=$PATH:$HOME/bin
+	export USE_CCACHE=1
+fi
+
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
     export TERM="$TERM-256color"
 fi
