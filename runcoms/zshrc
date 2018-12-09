@@ -54,6 +54,10 @@ if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "CuboxVM" ]]; then
 	export USE_CCACHE=1
 fi
 
+if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
+    export PATH=${PATH}:$HOME/Library/Android/sdk/platform-tools
+fi
+
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
     export TERM="$TERM-256color"
 fi

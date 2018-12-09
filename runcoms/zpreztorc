@@ -184,3 +184,5 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+zstyle ':prezto:module:utility:diff' color 'no'
+zstyle ':prezto:module:utility:wdiff' color 'no'
