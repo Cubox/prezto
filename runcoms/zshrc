@@ -31,28 +31,8 @@ if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
     export GOOS=darwin
     export GOARCH=amd64
     export PATH=${PATH}:/usr/local/opt/go/bin:${GOPATH}/bin
-elif [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Nidhoggur" ]]; then
-    export GOOS=freebsd
-    export GOARCH=amd64
-    export GOPATH=~/prog/Go
-    export PATH=${PATH}:${GOPATH}/bin
-fi
-
-# 42 specitic things
-
-if [[ "$USER" == "apilate" ]]; then
-	export PATH=$HOME/.brew/bin:$HOME/local/bin:${PATH}
-	export UNISONLOCALHOSTNAME="42"
-	export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-	export HOMEBREW_CACHE="$HOME/Library/Caches/Homebrew"
-fi
 
 # Various exports for me
-
-if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "CuboxVM" ]]; then
-	export PATH=$PATH:$HOME/bin
-	export USE_CCACHE=1
-fi
 
 if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
     export PATH=${PATH}:$HOME/Library/Android/sdk/platform-tools
