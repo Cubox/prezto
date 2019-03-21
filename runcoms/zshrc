@@ -31,7 +31,7 @@ if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
     export GOOS=darwin
     export GOARCH=amd64
     export PATH=${PATH}:/usr/local/opt/go/bin:${GOPATH}/bin
-elif [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Phoenix" ]]; then
+elif [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Onyx" ]]; then
     export GOOS=freebsd
     export GOARCH=amd64
     export GOPATH=~/prog/Go
