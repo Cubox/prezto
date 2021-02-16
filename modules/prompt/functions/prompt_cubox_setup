@@ -6,7 +6,7 @@ function prompt_cubox_setup {
         eval user="%F{green}%B%n%f%b"
         local userprompt="%b%F{blue}λ %f%b"
     fi
-    if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+    if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" || -n "SSH_CONNECTION" ]]; then
         eval host="%F{yellow}%B%M%f%b"
     else
         eval host="%F{red}%B%M%f%b"
