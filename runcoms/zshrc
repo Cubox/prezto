@@ -43,6 +43,8 @@ fi
 
 if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
     export PATH=${PATH}:$HOME/Library/Android/sdk/platform-tools
+    source /Users/cubox/Library/Preferences/org.dystroy.broot/launcher/bash/br
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
@@ -51,8 +53,3 @@ fi
 
 alias tmux="tmux -2"
 alias cpaste="curl -F 'content=<-' https://paste.cubox.me"
-
-source /Users/cubox/Library/Preferences/org.dystroy.broot/launcher/bash/br
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
