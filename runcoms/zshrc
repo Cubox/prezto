@@ -10,4 +10,29 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Fix zsh
+
+setopt MULTIOS
+setopt EXTENDED_GLOB
+setopt INTERACTIVECOMMENTS
+unsetopt CLOBBER
+unsetopt CORRECT
+unalias rm 2>/dev/null
+unalias scp 2>/dev/null
+
+if [[ -z "$HOSTNAME" ]]; then
+    HOSTNAME=$(hostname)
+fi
+
+# Various exports for me
+
+if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
+if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
+    export TERM="$TERM-256color"
+fi
+
+alias tmux="tmux -2"
+alias cpaste="curl -F 'content=<-' https://paste.cubox.me"
