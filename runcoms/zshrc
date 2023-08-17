@@ -26,13 +26,9 @@ fi
 
 # Various exports for me
 
-if [[ "$USER" == "cubox" ]] && [[ "$HOSTNAME" == "Sleipnir" ]]; then
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
     export TERM="$TERM-256color"
 fi
 
 alias tmux="tmux -2"
-alias cpaste="curl -F 'content=<-' https://paste.cubox.me"
+alias cpaste="curl -F 'content=<-' https://paste.cubox.dev"
