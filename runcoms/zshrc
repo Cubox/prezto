@@ -17,6 +17,7 @@ setopt EXTENDED_GLOB
 setopt INTERACTIVECOMMENTS
 unsetopt CLOBBER
 unsetopt CORRECT
+unsetopt AUTO_CD CDABLE_VARS
 unalias rm 2>/dev/null
 unalias scp 2>/dev/null
 
