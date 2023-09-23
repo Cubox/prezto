@@ -31,5 +31,9 @@ if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
     export TERM="$TERM-256color"
 fi
 
+if [[ "$HOSTNAME" == "Vagabond" ]]; then
+    PATH="/usr/local/sbin:/usr/sbin:/sbin:$PATH"
+fi
+
 alias tmux="tmux -2"
 alias cpaste="curl -F 'content=<-' https://paste.cubox.dev"
