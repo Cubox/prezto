@@ -35,9 +35,6 @@ if [[ "$HOSTNAME" == "Akimed.local" ]]; then
     eval "$(scw autocomplete script shell=zsh)"
 
     export PATH="/Users/andypilate/.local/bin:$PATH"
-    if [[ -n "$AGENT" ]]; then
-        unset HISTFILE
-    fi
 fi
 
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
@@ -55,3 +52,7 @@ alias cpaste="curl -F 'content=<-' https://paste.cubox.dev"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [[ -n "$AGENT" ]]; then
+    unset HISTFILE
+fi
