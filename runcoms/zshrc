@@ -35,6 +35,9 @@ if [[ "$HOSTNAME" == "Akimed.local" ]]; then
     eval "$(scw autocomplete script shell=zsh)"
 
     export PATH="/Users/andypilate/.local/bin:$PATH"
+    if [[ -n "$AGENT" ]]; then
+        unset HISTFILE
+    fi
 fi
 
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
