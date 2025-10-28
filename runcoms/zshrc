@@ -31,6 +31,10 @@ if [[ "$HOSTNAME" == "Akimed.local" ]]; then
     if [[ -z $SSH_AUTH_SOCK ]]; then
 	export SSH_AUTH_SOCK="~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
     fi
+    # Scaleway CLI autocomplete initialization.
+    eval "$(scw autocomplete script shell=zsh)"
+
+    export PATH="/Users/andypilate/.local/bin:$PATH"
 fi
 
 if [[ "$TERM" == "screen" ]] || [[ "$TERM" == "xterm" ]]; then
@@ -44,10 +48,6 @@ fi
 alias tmux="tmux -2"
 alias cpaste="curl -F 'content=<-' https://paste.cubox.dev"
 
-# Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"
-
-export PATH="/Users/andypilate/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
