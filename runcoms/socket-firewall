@@ -1,10 +1,16 @@
 # Socket Firewall Free wrappers.
-# Installed with: bun install -g sfw
+# Installed with: bun install -g sfw or npm install -g sfw.
 
-case ":$PATH:" in
-  *":$HOME/.bun/bin:"*) ;;
-  *) export PATH="$HOME/.bun/bin:$PATH" ;;
-esac
+if [ -d "$HOME/.bun/bin" ]; then
+  case ":$PATH:" in
+    *":$HOME/.bun/bin:"*) ;;
+    *) export PATH="$HOME/.bun/bin:$PATH" ;;
+  esac
+fi
+
+if ! command -v sfw >/dev/null 2>&1 && [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh"
+fi
 
 if command -v sfw >/dev/null 2>&1; then
   if [ -n "$ZSH_VERSION" ]; then
