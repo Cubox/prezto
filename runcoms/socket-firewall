@@ -1,3 +1,11 @@
+# Socket Firewall Free wrappers.
+# Installed with: bun install -g sfw
+
+case ":$PATH:" in
+  *":$HOME/.bun/bin:"*) ;;
+  *) export PATH="$HOME/.bun/bin:$PATH" ;;
+esac
+
 if command -v sfw >/dev/null 2>&1; then
   if [ -n "$ZSH_VERSION" ]; then
     _sfw_package_managers=(
