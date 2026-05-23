@@ -9,3 +9,8 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall" ]]; then
+  export BASH_ENV="${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall"
+  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall"
+fi

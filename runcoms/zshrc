@@ -56,3 +56,7 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -n "$AGENT" ]]; then
     unset HISTFILE
 fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall"
+fi
