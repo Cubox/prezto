@@ -50,15 +50,14 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/{,s}bin(N)
-  $HOME/.bun/bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $path
 )
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall" ]]; then
-  export BASH_ENV="${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall"
-  source "${ZDOTDIR:-$HOME}/.zprezto/runcoms/socket-firewall"
+if [[ -s "$HOME/.safe-chain/scripts/init-posix.sh" ]]; then
+  export BASH_ENV="$HOME/.safe-chain/scripts/init-posix.sh"
+  source "$HOME/.safe-chain/scripts/init-posix.sh"
 fi
 
 #
