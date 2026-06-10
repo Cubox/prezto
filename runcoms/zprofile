@@ -55,6 +55,14 @@ path=(
   $path
 )
 
+# Load platform package manager paths before Safe Chain wraps package managers.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+if [[ -s "$HOME/.local/bin/env" ]]; then
+  source "$HOME/.local/bin/env"
+fi
+
 if [[ -s "$HOME/.safe-chain/scripts/init-posix.sh" ]]; then
   export BASH_ENV="$HOME/.safe-chain/scripts/init-posix.sh"
   source "$HOME/.safe-chain/scripts/init-posix.sh"
@@ -78,8 +86,6 @@ if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 if [[ "$HOSTNAME" == "Akimed.local" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
     # Added by OrbStack: command-line tools and integration
     # Comment this line if you don't want it to be added again.
     source ~/.orbstack/shell/init.zsh 2>/dev/null || :
